@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MDI Gurgaon Interview Transcripts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            color: black;
+            text-align: center;
+            margin: 40px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            border: 3px solid black;
+            border-radius: 10px;
+            padding: 20px;
+        }
+        h1 {
+            margin-bottom: 10px;
+        }
+        .list-container {
+            max-height: 300px;
+            overflow-y: auto;
+            border-top: 2px solid black;
+            padding-top: 10px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            padding: 10px;
+            border-bottom: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>MDI Delhi - Interview Transcripts</h1>
+        <div class="list-container">
+            <ul id="college-list"></ul>
+        </div>
+    </div>
+
+    <script>
+        const colleges = {
+            "Transcript 1":"MDI/transcript1.html",
+            "Transcript 2":"MDI/transcript2.html",
+            "Transcript 3":"MDI/transcript3.html",
+            "Transcript 4":"MDI/transcript4.html",
+            "Transcript 5":"MDI/transcript5.html",
+            "Transcript 6":"MDI/transcript6.html",
+            "Transcript 7":"MDI/transcript7.html",
+            "Transcript 8":"MDI/transcript8.html",
+            "Transcript 9":"MDI/transcript9.html",
+            "Transcript 10":"MDI/transcript10.html",
+            "Transcript 11":"MDI/transcript11.html",
+            "Transcript 12":"MDI/transcript12.html",
+            "Transcript 13":"MDI/transcript13.html",
+            "Transcript 14":"MDI/transcript14.html",
+            "Transcript 15":"MDI/transcript15.html",
+            "Transcript 16":"MDI/transcript16.html",
+            "Transcript 17":"MDI/transcript17.html",
+            "Transcript 18":"MDI/transcript18.html",
+            "Transcript 19":"MDI/transcript19.html",
+            "Transcript 20":"MDI/transcript20.html",
+            "Transcript 21":"MDI/transcript21.html",
+            "Transcript 22":"MDI/transcript22.html",
+            "Transcript 23":"MDI/transcript23.html",
+            "Transcript 24":"MDI/transcript24.html",
+            "Transcript 25":"MDI/transcript25.html",
+        };
+
+        const listContainer = document.getElementById("college-list");
+        for (const [name, link] of Object.entries(colleges)) {
+            const listItem = document.createElement("li");
+            const anchor = document.createElement("a");
+            anchor.href = link;
+            anchor.textContent = name;
+            anchor.style.textDecoration = "none";
+            anchor.style.color = "black";
+            listItem.appendChild(anchor);
+            listContainer.appendChild(listItem);
+        }
+    </script>
+</body>
+</html>
