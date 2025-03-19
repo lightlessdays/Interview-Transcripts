@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty of Management Studies (FMS) Interview Transcripts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            color: black;
+            text-align: center;
+            margin: 40px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            border: 3px solid black;
+            border-radius: 10px;
+            padding: 20px;
+        }
+        h1 {
+            margin-bottom: 10px;
+        }
+        .list-container {
+            max-height: 300px;
+            overflow-y: auto;
+            border-top: 2px solid black;
+            padding-top: 10px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            padding: 10px;
+            border-bottom: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>FMS Delhi Interview Transcripts</h1>
+        <div class="list-container">
+            <ul id="college-list"></ul>
+        </div>
+    </div>
+
+    <script>
+        const colleges = {
+           "Transcript 1":"https://www.crookshanksacademy.com/post/fms-interview-transcript-1",
+           "Transcript 2":"https://www.crookshanksacademy.com/post/fms-interview-transcript-1-1",
+           "Transcript 3":"https://www.crookshanksacademy.com/post/fms-interview-transcript-1-2",
+           "Transcript 4":"https://www.crookshanksacademy.com/post/fms-interview-transcript-1-2-1",
+           "Transcript 5":"https://www.crookshanksacademy.com/post/fms-interview-transcript-1-2-1-1"
+        };
+
+        const listContainer = document.getElementById("college-list");
+        for (const [name, link] of Object.entries(colleges)) {
+            const listItem = document.createElement("li");
+            const anchor = document.createElement("a");
+            anchor.href = link;
+            anchor.textContent = name;
+            anchor.style.textDecoration = "none";
+            anchor.style.color = "black";
+            listItem.appendChild(anchor);
+            listContainer.appendChild(listItem);
+        }
+    </script>
+</body>
+</html>
