@@ -3,103 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interview Experience - 1</title>
+    <title>FMS Delhi Interview Transcripts</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #fff;
-            color: #000;
+            background-color: white;
+            color: black;
+            text-align: center;
             margin: 40px;
-            padding: 20px;
         }
         .container {
-            max-width: 800px;
+            max-width: 600px;
             margin: auto;
+            border: 3px solid black;
+            border-radius: 10px;
+            padding: 20px;
         }
-        h1, h2 {
-            text-align: center;
+        h1 {
+            margin-bottom: 10px;
         }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
+        .list-container {
+            max-height: 300px;
+            overflow-y: auto;
+            border-top: 2px solid black;
+            padding-top: 10px;
         }
-        th, td {
-            border: 1px solid #000;
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
             padding: 10px;
-            text-align: left;
-        }
-        th {
-            background-color: #000;
-            color: #fff;
+            border-bottom: 1px solid black;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Interview Experience - 1</h1>
-        
-        <h2>Candidate Profile</h2>
-        <table>
-            <tr>
-                <th>CAT Percentile</th>
-                <td>98.64 (VARC: 99.63 | DILR: 91.72 | QA: 94.75)</td>
-            </tr>
-            <tr>
-                <th>Academics</th>
-                <td>10th – 89% | 12th – 93% | Graduation – 60%</td>
-            </tr>
-            <tr>
-                <th>Graduation</th>
-                <td>BSc</td>
-            </tr>
-            <tr>
-                <th>Work Experience</th>
-                <td>14 months</td>
-            </tr>
-        </table>
-        
-        <h2>Extempore Topic</h2>
-        <p><strong>Topic:</strong> MeToo Movement</p>
-        <p>Started with the background of the movement and its emergence in India. Discussed its impact on workplace dynamics for both men and women. Concluded with how social media verdicts influence the movement.</p>
-        
-        <h2>Interview Questions & Responses</h2>
-        <table>
-            <tr>
-                <th>Panelist</th>
-                <th>Question</th>
-                <th>Response</th>
-            </tr>
-            <tr>
-                <td>F</td>
-                <td>Three cases where the MeToo movement gained traction?</td>
-                <td><em>Told</em></td>
-            </tr>
-            <tr>
-                <td>F</td>
-                <td>Opinion on the Priya Ramani case?</td>
-                <td><em>Told</em></td>
-            </tr>
-            <tr>
-                <td>F</td>
-                <td>Asked about a few legal terms related to the case.</td>
-                <td><em>No idea</em></td>
-            </tr>
-            <tr>
-                <td>F</td>
-                <td>Your opinion on social media verdicts and their impact on the credibility of women's voices?</td>
-                <td><em>Told</em></td>
-            </tr>
-            <tr>
-                <td>F</td>
-                <td>What is Kanpur famous for?</td>
-                <td><em>Told</em></td>
-            </tr>
-        </table>
-        
-        <h2>Closing Remarks</h2>
-        <p>The panel wished me luck.</p>
-        <p><strong>Verdict:</strong> <em>Selected! 🎉</em></p>
+        <h1>Top Colleges</h1>
+        <div class="list-container">
+            <ul id="college-list"></ul>
+        </div>
     </div>
+
+    <script>
+        const colleges = {
+            "Transcript 1":"FMS/transcript1.html"
+        };
+
+        const listContainer = document.getElementById("college-list");
+        for (const [name, link] of Object.entries(colleges)) {
+            const listItem = document.createElement("li");
+            const anchor = document.createElement("a");
+            anchor.href = link;
+            anchor.textContent = name;
+            anchor.style.textDecoration = "none";
+            anchor.style.color = "black";
+            listItem.appendChild(anchor);
+            listContainer.appendChild(listItem);
+        }
+    </script>
 </body>
 </html>
