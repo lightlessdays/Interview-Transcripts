@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interview Transcripts</title>
+    <title>Dictionary List</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -21,6 +21,8 @@
             border-radius: 15px;
             padding: 20px;
             text-align: center;
+            overflow-y: auto;
+            max-height: 80vh;
         }
         .search-bar {
             display: flex;
@@ -69,32 +71,25 @@
 
     <script>
         const dictionary = {
-            "IIM Ahmedabad": "https://lightlessdays.github.io/Interview-Transcripts/IIM_Ahmedabad",
-            "IIM Bangalore": "https://lightlessdays.github.io/Interview-Transcripts/IIM_Bangalore",
-            "IIM Calcutta": "https://lightlessdays.github.io/Interview-Transcripts/IIM_Calcutta",
-            "IIM Lucknow": "https://lightlessdays.github.io/Interview-Transcripts/IIM_Lucknow",
-            "IIM Indore": "https://lightlessdays.github.io/Interview-Transcripts/IIM_Indore",
-            "IIM Kozhikode": "https://lightlessdays.github.io/Interview-Transcripts/IIM_Kozhikode",
-            "SPJIMR Mumbai": "https://lightlessdays.github.io/Interview-Transcripts/SPJIMR_Mumbai",
-            "MDI Gurgaon": "https://lightlessdays.github.io/Interview-Transcripts/MDI_Gurgaon",
-            "IIFT": "https://lightlessdays.github.io/Interview-Transcripts/IIFT",
-            "FMS Delhi": "https://lightlessdays.github.io/Interview-Transcripts/FMS_Delhi",
-            "IMT Ghaziabad": "https://lightlessdays.github.io/Interview-Transcripts/IMT_Ghaziabad",
-            "NMIMS Mumbai": "https://lightlessdays.github.io/Interview-Transcripts/NMIMS_Mumbai",
-            "ISB Hyderabad": "https://lightlessdays.github.io/Interview-Transcripts/ISB_Hyderabad",
-            "TAPMI Manipal": "https://lightlessdays.github.io/Interview-Transcripts/TAPMI_Manipal",
-            "XIM Bhubaneswar": "https://lightlessdays.github.io/Interview-Transcripts/XIM_Bhubaneswar",
-            "Great Lakes Chennai": "https://lightlessdays.github.io/Interview-Transcripts/Great_Lakes_Chennai",
-            "IIT Delhi": "https://lightlessdays.github.io/Interview-Transcripts/IIT_Delhi",
-            "IIT Bombay": "https://lightlessdays.github.io/Interview-Transcripts/IIT_Bombay",
-            "IIT Kharagpur": "https://lightlessdays.github.io/Interview-Transcripts/IIT_Kharagpur",
-            "IIT Madras": "https://lightlessdays.github.io/Interview-Transcripts/IIT_Madras",
-            "IIT Roorkee": "https://lightlessdays.github.io/Interview-Transcripts/IIT_Roorkee",
-            "IIT Kanpur": "https://lightlessdays.github.io/Interview-Transcripts/IIT_Kanpur",
-            "Nirma University": "https://lightlessdays.github.io/Interview-Transcripts/Nirma_University",
-            "IRMA Anand": "https://lightlessdays.github.io/Interview-Transcripts/IRMA_Anand",
-            "FORE School of Management": "https://lightlessdays.github.io/Interview-Transcripts/FORE_School",
-            "SIMSREE Mumbai": "https://lightlessdays.github.io/Interview-Transcripts/SIMSREE_Mumbai"
+            "Faculty of Management Studies (FMS), University of Delhi": "#",
+            "Indian Institute of Management Ahmedabad (IIMA)": "#",
+            "Indian Institute of Management Bangalore (IIMB)": "#",
+            "Indian Institute of Management Calcutta (IIMC)": "#",
+            "Indian Institute of Management Indore (IIMI)": "#",
+            "Indian Institute of Management Kozhikode (IIMK)": "#",
+            "Indian Institute of Management Lucknow (IIML)": "#",
+            "Shailesh J. Mehta School of Management (SJMSOM), IIT Bombay": "#",
+            "S. P. Jain Institute of Management & Research (SPJIMR), Mumbai": "#",
+            "Department of Management Studies, IIT Delhi": "#",
+            "Indian Institute of Foreign Trade (IIFT), New Delhi and Kolkata": "#",
+            "Indian Institute of Management Mumbai (IIM Mumbai)": "#",
+            "Jamnalal Bajaj Institute of Management Studies (JBIMS), Mumbai": "#",
+            "Management Development Institute (MDI), Gurugram": "#",
+            "Narsee Monjee Institute of Management Studies (NMIMS), Mumbai": "#",
+            "Rajiv Gandhi Indian Institute of Management Shillong (RGIIM)": "#",
+            "Symbiosis Centre for Management & Human Resource Development (SCMHRD), Pune": "#",
+            "Symbiosis Institute of Business Management (SIBM), Pune": "#",
+            "Tata Institute of Social Sciences (TISS), Mumbai": "#"
         };
         
         const list = document.getElementById("list");
@@ -102,19 +97,16 @@
         
         function renderList(filter = "") {
             list.innerHTML = "";
-            Object.keys(dictionary).forEach(key => {
-                if (key.toLowerCase().includes(filter.toLowerCase())) {
-                    const li = document.createElement("li");
-                    li.textContent = key;
-                    li.onclick = () => window.location.href = dictionary[key];
-                    list.appendChild(li);
-                }
+            let filteredItems = Object.keys(dictionary).filter(key => key.toLowerCase().includes(filter.toLowerCase()));
+            filteredItems.slice(0, 3).forEach(key => {
+                const li = document.createElement("li");
+                li.textContent = key;
+                li.onclick = () => window.location.href = dictionary[key];
+                list.appendChild(li);
             });
         }
         
         search.addEventListener("input", () => renderList(search.value));
-        
-        renderList();
     </script>
 </body>
 </html>
